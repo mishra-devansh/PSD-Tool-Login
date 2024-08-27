@@ -1,8 +1,12 @@
-body{
+body {
   margin: 0;
   padding: 0;
-  background-color: #1d2634;
-  color: #9e9ea4;
+  background:#ffffff rgb(105, 105, 105); 
+  /* background: radial-gradient(circle,
+      rgb(64, 64, 64) 40%, 
+      rgb(169, 169, 169) 100%, 
+      rgb(211, 211, 211) 40%);  */
+  color: #2f2f2f; 
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -92,7 +96,7 @@ body{
 }
 
 .header-right .one:hover{
-  color: rgb(255, 255, 255);
+  color: rgb(226, 26, 26);
   cursor: pointer;
 }
 
@@ -132,7 +136,7 @@ body{
 
 
 .search-bar button:hover{
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(229, 32, 32);
   color: black;
   cursor: pointer;
   font-size: 20px;
@@ -263,7 +267,7 @@ body{
 }
 
 .main-title h3{
-  color: #fff;
+  color: #000000;
   font-size: 22px;
   font-weight: 500;
 
@@ -318,17 +322,17 @@ body{
 }
 
 .card:first-child{
-  background-color: #2962ff;
+  background-color: #A9A9A9;
 }
 
 
 .card:nth-child(2){
-  background-color: #e9e926;
+  background-color: #A9A9A9;
 }
 
 
 .card:nth-child(3){
-  background-color: #ff2929;
+  background-color: #A9A9A9;
 }
 
 

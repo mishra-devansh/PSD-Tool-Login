@@ -16,6 +16,7 @@ function Admin() {
             <Header OpenSidebar={OpenSidebar} />
             <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar} />
             <Home />
+            
         </div>
     )
 }

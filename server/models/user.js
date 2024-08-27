@@ -14,15 +14,15 @@ const phoneValidator = [
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-    firstname: {
+    firstName: {
         type: String,
         required: true
     },
-    lastname: {
+    lastName: {
         type: String,
         required: true
     },
-    phonenumber: {
+    phoneNumber: {
         type: String,
         required: true,
         validate: phoneValidator, // Apply the phone number validator
@@ -37,39 +37,38 @@ const userSchema = new Schema({
         type: String,
         trim: true,
         required: true
-    }
+    },
+    role:{
+        type: String,
+        required: true
+}
+
 });
 
-userSchema.statics.findByCredentials = async (email,password) => {
-    console.log("last");
-    const user = await EmployeeModel.findOne({email});
+userSchema.statics.findByCredentials = async (email, password) => {
+    const user = await User.findOne({ email });
 
-    if(!user){
-        
-        throw new Error();
+    if (!user) {
+        throw new Error('Unable to login');
     }
 
-    const isMatch = await bcrypt.compare(password,user.password);
+    const isMatch = await bcrypt.compare(password, user.password);
 
-    if(!isMatch){
-
-        throw new Error();
+    if (!isMatch) {
+        throw new Error('Unable to login');
     }
 
     return user;
+};
 
-}
-
-userSchema.pre("save",async function(next){
+userSchema.pre("save", async function(next) {
     const user = this;
 
-    if(user.isModified("password")){
-        user.password = await bcrypt.hash(user.password,8);
+    if (user.isModified("password")) {
+        user.password = await bcrypt.hash(user.password, 8);
     }
-    next(); 
-})
-
-
+    next();
+});
 
 const User = mongoose.model("User", userSchema);
 module.exports = User;

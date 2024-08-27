@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 
-const mongodbURL = "mongodb+srv://vipunsanjana34:vipun1234@cluster0.xkoqeyo.mongodb.net/mydatas?retryWrites=true&w=majority";
+const mongodbURL = "mongodb://localhost:27017/users";
 mongoose.connect(mongodbURL,{
     useNewUrlParser:true,
     useUnifiedTopology:true,
